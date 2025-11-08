@@ -117,7 +117,7 @@ Risk Severity: ${variables.severity}`;
       setGeneratedSignal(formattedSignal);
     } catch (error) {
       console.error('Error generating signal:', error);
-      setGeneratedSignal(`Error generating signal: ${error.message}. Please try again or check your input.`);
+      setGeneratedSignal(`Error generating signal: ${(error as Error).message}. Please try again or check your input.`);
     }
 
     setIsLoading(false);
@@ -137,7 +137,7 @@ Risk Severity: ${variables.severity}`;
     URL.revokeObjectURL(url);
   };
 
-  const handleVariableChange = (key, value) => {
+  const handleVariableChange = (key: string, value: string) => {
     setVariables(prev => ({ ...prev, [key]: value }));
   };
 
