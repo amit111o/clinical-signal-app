@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FileText, AlertTriangle, Edit3, Download, Copy, RefreshCw } from 'lucide-react';
+import { useState } from 'react';
+import { FileText, Download, Copy, Wand2 } from 'lucide-react';
 
 const SignalWriterApp = () => {
   const [inputText, setInputText] = useState('');
@@ -9,7 +9,6 @@ const SignalWriterApp = () => {
   const [variables, setVariables] = useState({
     severity: 'Medium'
   });
-  const [showVariables, setShowVariables] = useState(false);
 
   const generateSignal = async () => {
     if (!inputText.trim()) return;
